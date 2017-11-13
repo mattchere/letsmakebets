@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bets {
+  width: 70%;
+}
+
+.bets li {
+  border: 2px solid black;
+  padding-left: 2%;
+}

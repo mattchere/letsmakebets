@@ -1,0 +1,19 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+
+  <h1>All bets</h1>
+
+  {% if bet_list %}
+  <ul class="bets">
+    {% for bet in bet_list %}
+      <li>
+        <h1>{{ bet.title }}</h1>
+        <p>{{ bet.bettor }} bet {{ bet.taker }} {{ bet.wager }}</p>
+        <p>Description: {{ bet.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+{% endblock %}
