@@ -7,19 +7,19 @@ class Bet(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
     wager = models.CharField(max_length=100)
-    bettor = models.OneToOneField(
+    bettor = models.ForeignKey(
         'Bettor', 
         help_text="Enter who made the bet", 
         on_delete=models.CASCADE, 
         null=True
     )
-    taker = models.OneToOneField(
+    taker = models.ForeignKey(
         'Taker',
         help_text="Enter who accepted the bet",
         on_delete=models.CASCADE,
         null=True
     )
-    winner = models.NullBooleanField()
+    won = models.NullBooleanField()
 
     def __str__(self):
         return self.title
