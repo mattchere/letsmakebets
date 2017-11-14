@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^bets/', include('bets.urls')),
     url(r'^$', RedirectView.as_view(url='/bets/', permanent=True)),
+    url(r'^', include('django.contrib.auth.urls')),
 ]
