@@ -1,0 +1,9 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+
+  <h1>{{ bet.title }} {{ bet.get_winner_or_nothing }}</h1>
+  <p>{{ bet.bettor }} bet {{ bet.taker }} {{ bet.wager }}</p>
+  <p>{{ bet.description }}</p>
+
+
+{% endblock %}

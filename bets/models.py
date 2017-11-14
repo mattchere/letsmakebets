@@ -28,6 +28,15 @@ class Bet(models.Model):
     def get_absolute_url(self):
         return reverse('bet-detail', args=[str(self.id)])
 
+    def get_winner_or_nothing(self):
+        if self.won is not None:
+            if self.won:
+                return '[' + str(self.bettor) + ']'
+            else:
+                return '[' + str(self.taker) + ']'
+        return ''
+
+
 class Bettor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 

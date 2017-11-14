@@ -7,11 +7,13 @@
   {% if bet_list %}
   <ul class="bets">
     {% for bet in bet_list %}
-      <li>
-        <h1>{{ bet.title }}</h1>
-        <p>{{ bet.bettor }} bet {{ bet.taker }} {{ bet.wager }}</p>
-        <p>Description: {{ bet.description }}</p>
-      </li>
+      <a href="{{ bet.get_absolute_url }}">
+        <li>
+          <h1>{{ bet.title }}</h1>
+          <p>{{ bet.bettor }} bet {{ bet.taker }} {{ bet.wager }}</p>
+          <p>Description: {{ bet.description }}</p>
+        </li>
+      </a>
     {% endfor %}
   </ul>
   {% endif %}
