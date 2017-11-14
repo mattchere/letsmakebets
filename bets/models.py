@@ -20,6 +20,7 @@ class Bet(models.Model):
         null=True
     )
     won = models.NullBooleanField()
+    accepted = models.BooleanField()
 
     def __str__(self):
         return self.title
